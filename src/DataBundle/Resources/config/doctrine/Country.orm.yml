@@ -1,0 +1,29 @@
+DataBundle\Entity\Country:
+    type: entity
+    table: country
+    uniqueConstraints:
+        country_code_UNIQUE:
+            columns:
+                - country_code
+    id:
+        countryId:
+            type: integer
+            nullable: false
+            unsigned: false
+            id: true
+            column: country_id
+        countryCode:
+            type: string
+            nullable: false
+            length: 5
+            fixed: false
+            id: true
+            column: country_code
+    fields:
+        countryName:
+            type: string
+            nullable: false
+            length: 50
+            fixed: false
+            column: country_name
+    lifecycleCallbacks: {  }

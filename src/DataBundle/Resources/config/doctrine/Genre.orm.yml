@@ -1,0 +1,32 @@
+DataBundle\Entity\Genre:
+    type: entity
+    table: genre
+    uniqueConstraints:
+        genre_name_UNIQUE:
+            columns:
+                - genre_name
+    id:
+        genreId:
+            type: integer
+            nullable: false
+            unsigned: false
+            id: true
+            column: genre_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        genreName:
+            type: string
+            nullable: false
+            length: 45
+            fixed: false
+            column: genre_name
+    manyToMany:
+        movie:
+            targetEntity: Movie
+            cascade: {  }
+            mappedBy: genre
+            inversedBy: null
+            joinTable: null
+            orderBy: null
+    lifecycleCallbacks: {  }

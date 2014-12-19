@@ -1,0 +1,22 @@
+DataBundle\Entity\MovieGenres:
+    type: entity
+    table: movie_genres
+    indexes:
+        movie_genres_genre_fk_idx:
+            columns:
+                - genre
+    id:
+        movie:
+            type: integer
+            nullable: false
+            unsigned: false
+            id: true
+            column: movie
+    fields:
+        genre:
+            type: integer
+            nullable: false
+            unsigned: false
+            fixed: false
+            column: genre
+    lifecycleCallbacks: {  }

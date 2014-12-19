@@ -1,0 +1,48 @@
+DataBundle\Entity\Actor:
+    type: entity
+    table: actor
+    indexes:
+        actor_country_idx:
+            columns:
+                - actor_country
+    id:
+        actorId:
+            type: integer
+            nullable: false
+            unsigned: false
+            id: true
+            column: actor_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        actorFirstName:
+            type: string
+            nullable: false
+            length: 45
+            fixed: false
+            column: actor_first_name
+        actorLastName:
+            type: string
+            nullable: false
+            length: 45
+            fixed: false
+            column: actor_last_name
+    manyToOne:
+        actorCountry:
+            targetEntity: Country
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                actor_country:
+                    referencedColumnName: country_id
+            orphanRemoval: false
+    manyToMany:
+        movie:
+            targetEntity: Movie
+            cascade: {  }
+            mappedBy: actor
+            inversedBy: null
+            joinTable: null
+            orderBy: null
+    lifecycleCallbacks: {  }

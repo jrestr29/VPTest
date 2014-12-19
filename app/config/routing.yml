@@ -1,3 +1,11 @@
+data:
+    resource: "@DataBundle/Resources/config/routing.yml"
+    prefix:   /
+
+data_manager:
+    resource: "@DataManagerBundle/Resources/config/routing.yml"
+    prefix:   /
+
 app:
     resource: @AppBundle/Controller/
     type:     annotation

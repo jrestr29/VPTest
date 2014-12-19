@@ -1,0 +1,67 @@
+DataBundle\Entity\Movie:
+    type: entity
+    table: movie
+    indexes:
+        movie_director_idx:
+            columns:
+                - movie_director
+    id:
+        movieId:
+            type: integer
+            nullable: false
+            unsigned: false
+            id: true
+            column: movie_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        movieTitle:
+            type: string
+            nullable: true
+            length: 45
+            fixed: false
+            column: movie_title
+    manyToOne:
+        movieDirector:
+            targetEntity: Director
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                movie_director:
+                    referencedColumnName: director_id
+            orphanRemoval: false
+    manyToMany:
+        actor:
+            targetEntity: Actor
+            cascade: {  }
+            mappedBy: null
+            inversedBy: movie
+            joinTable:
+                name: movie_actors
+                joinColumns:
+                    -
+                        name: movie
+                        referencedColumnName: movie_id
+                inverseJoinColumns:
+                    -
+                        name: actor
+                        referencedColumnName: actor_id
+            orderBy: null
+        genre:
+            targetEntity: Genre
+            cascade: {  }
+            mappedBy: null
+            inversedBy: movie
+            joinTable:
+                name: movie_genres
+                joinColumns:
+                    -
+                        name: movie
+                        referencedColumnName: movie_id
+                inverseJoinColumns:
+                    -
+                        name: genre
+                        referencedColumnName: genre_id
+            orderBy: null
+    lifecycleCallbacks: {  }

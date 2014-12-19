@@ -1,0 +1,40 @@
+DataBundle\Entity\Director:
+    type: entity
+    table: director
+    indexes:
+        director_country_idx:
+            columns:
+                - director_country
+    id:
+        directorId:
+            type: integer
+            nullable: false
+            unsigned: false
+            id: true
+            column: director_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        directorFirstName:
+            type: string
+            nullable: false
+            length: 45
+            fixed: false
+            column: director_first_name
+        directorLastName:
+            type: string
+            nullable: false
+            length: 45
+            fixed: false
+            column: director_last_name
+    manyToOne:
+        directorCountry:
+            targetEntity: Country
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                director_country:
+                    referencedColumnName: country_id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

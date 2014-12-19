@@ -1,0 +1,23 @@
+DataBundle\Entity\MovieActors:
+    type: entity
+    table: movie_actors
+    indexes:
+        movie_actors_actor_idx:
+            columns:
+                - actor
+    id:
+        movie:
+            type: integer
+            nullable: false
+            unsigned: false
+            id: true
+            column: movie
+    fields:
+        genre:
+            type: integer
+            nullable: false
+            unsigned: false
+            fixed: false
+            column: actor
+    
+    lifecycleCallbacks: {  }
