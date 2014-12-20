@@ -1,0 +1,26 @@
+DataBundle\Entity\User:
+    type: entity
+    table: user
+    id:
+        userId:
+            type: integer
+            nullable: false
+            unsigned: false
+            id: true
+            column: user_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        userFirstName:
+            type: string
+            nullable: false
+            length: 45
+            fixed: false
+            column: user_first_name
+        userLastName:
+            type: string
+            nullable: true
+            length: 45
+            fixed: false
+            column: user_last_name
+    lifecycleCallbacks: {  }

@@ -164,4 +164,116 @@ class Movie
     {
         return $this->genre;
     }
+    /**
+     * @var string
+     */
+    private $movieSummary;
+
+    /**
+     * @var string
+     */
+    private $movieImage;
+
+    /**
+     * @var string
+     */
+    private $movieTrailerCode;
+
+
+    /**
+     * Set movieSummary
+     *
+     * @param string $movieSummary
+     * @return Movie
+     */
+    public function setMovieSummary($movieSummary)
+    {
+        $this->movieSummary = $movieSummary;
+
+        return $this;
+    }
+
+    /**
+     * Get movieSummary
+     *
+     * @return string 
+     */
+    public function getMovieSummary()
+    {
+        return $this->movieSummary;
+    }
+
+    /**
+     * Set movieImage
+     *
+     * @param string $movieImage
+     * @return Movie
+     */
+    public function setMovieImage($movieImage)
+    {
+        $this->movieImage = $movieImage;
+
+        return $this;
+    }
+
+    /**
+     * Get movieImage
+     *
+     * @return string 
+     */
+    public function getMovieImage()
+    {
+        return $this->movieImage;
+    }
+
+    /**
+     * Set movieTrailerCode
+     *
+     * @param string $movieTrailerCode
+     * @return Movie
+     */
+    public function setMovieTrailerCode($movieTrailerCode)
+    {
+        $this->movieTrailerCode = $movieTrailerCode;
+
+        return $this;
+    }
+
+    /**
+     * Get movieTrailerCode
+     *
+     * @return string 
+     */
+    public function getMovieTrailerCode()
+    {
+        return $this->movieTrailerCode;
+    }
+    /**
+     * @var \DataBundle\Entity\User
+     */
+    private $movieOwner;
+
+
+    /**
+     * Set movieOwner
+     *
+     * @param \DataBundle\Entity\User $movieOwner
+     * @return Movie
+     */
+    public function setMovieOwner(\DataBundle\Entity\User $movieOwner = null)
+    {
+        $this->movieOwner = $movieOwner;
+
+        return $this;
+    }
+
+    /**
+     * Get movieOwner
+     *
+     * @return \DataBundle\Entity\User 
+     */
+    public function getMovieOwner()
+    {
+        return $this->movieOwner;
+    }
 }

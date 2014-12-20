@@ -2,12 +2,80 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    </head>
-    <body>
+        <title>Gestor de peliculas ~~ VP :: Test</title>
+    {% block stylesheets %}{% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    <link href="{{ asset('bundles/layout/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css"/>
+    <link href="{{ asset('bundles/layout/css/bootstrap.css') }}" rel="stylesheet" type="text/css"/>
+    <link href="{{ asset('bundles/layout/css/bootstrap-theme.min.css') }}" rel="stylesheet" type="text/css"/>
+    <link href="{{ asset('bundles/layout/css/style.css') }}" rel="stylesheet" type="text/css"/>
+    <script src="{{ asset('bundles/layout/js/jquery.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('bundles/layout/js/bootstrap.js') }}" type="text/javascript"></script>
+</head>
+<body>
+    <header>
+        <div class="menu">
+            <ul class="nav">
+                <li class="active"><a data-load="ajax" data-content="section[id='body']" href="index.html">Inicio</a></li> 
+                <li><a data-load="ajax" data-content="section[id='body']" href="index.html">Directors</a></li> 
+                <li><a data-load="ajax" data-content="section[id='body']" href="index.html">Genres</a></li> 
+                <li><a data-load="ajax" data-content="section[id='body']" href="index.html">Countries</a></li> 
+                <li><a data-load="ajax" data-content="section[id='body']" href="index.html">Actors</a></li> 
+                <li><a data-load="ajax" data-content="section[id='body']" href="index.html">Movies</a></li> 
+                <!--<li><a href="#">Empresa</a>
+                    <ul>
+                        <li><a data-id="body_content" href="pages/nuestraempresa.html">Nuestra&nbspEmpresa</a></li>
+                        <li><a data-id="body_content" href="pages/servicios.html">Certificaciones</a></li>
+                        <li><a data-id="body_content" href="pages/responsabilidadsocial.html">Responsabilidad&nbspSocial</a></li>
+                        <li><a data-id="body_content" href="pages/celebralavida.html">Celebra&nbspla&nbspVida</a></li>
+                    </ul>
+                </li>!-->
+
+
+            </ul>
+        </div>
+
+
+    </header>
+    <section id="body">
+        <section id="usable_body" style="border:1px solid #000000; width:80%; margin: 0 auto; margin-top:2%">a</section>
         {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+</section>
+<footer>
+
+</footer>
+
+
+{% block javascripts %}{% endblock %}
+
+{% block modal_block %}{% endblock %}
+</body>
+
+<script>
+    $(document).ready(function () {
+        $("a[data-load='ajax']").click(function (e) {
+            e.preventDefault();
+            var url = $(this).attr('href');
+            var content = $(this).attr('data-content');
+            loadPage(url, content);
+        });
+        //loadPage('{{ url('layout_landing_page') }}', "section[id='body']");
+    });
+
+    function loadPage(url, content) {
+        $.get(url, function (data) {
+            $(content).html(data);
+            console.log("DEBUG: Loaded URL " + url);
+        });
+    }
+
+    function localStorageRead() { //Reads the user key located on localStorage
+        console.log("DEBUG: LoStorage " + localStorage.getItem('session_key'));
+        return localStorage.getItem('session_key');
+    }
+
+    function localStorageWrite(key) { // Write the user key on localStorage
+        localStorage.setItem('session_key', key);
+    }
+</script>
 </html>

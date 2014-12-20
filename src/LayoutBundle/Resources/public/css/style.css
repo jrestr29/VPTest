@@ -1,0 +1,156 @@
+header{
+    width: 100%;
+    height: 53px;
+    position: relative;
+    z-index: 100;
+    background-color: #f0f0f0;
+}
+
+/***MENUS***/
+
+header .menu{
+    float:right;
+    //border:1px solid #000000;
+    width:50%;
+    height:40px;
+    margin-top: 13px;
+}
+
+header .menu .nav ul{
+    margin: 0;
+    padding: 0;
+    float: right;   
+}
+
+header .menu .nav > li {
+    float: left;
+    font-family: 'PT Sans Caption',sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+header .menu .nav li a {
+    moz-transition-duration: .2s,.2s;
+    moz-transition-property: color,background;
+    moz-transition-timing-function: linear,ease-in;
+    ms-transition-duration: .2s,.2s;
+    ms-transition-property: color,background;
+    ms-transition-timing-function: linear,ease-in;
+    o-transition-duration: .2s,.2s;
+    o-transition-property: color,background;
+    o-transition-timing-function: linear,ease-in;
+    webkit-transition-duration: .2s,.2s;
+    webkit-transition-property: color,background;
+    webkit-transition-timing-function: linear,ease-in;
+}
+
+header .menu .nav > li .active {
+    color: #FF0000 !important;
+    text-height: bold;
+}
+
+header .menu .nav > li a:link {
+    color: rgb(46, 46, 46);
+    text-decoration: none;
+}
+
+/* visited link */
+header .menu .nav > li a:visited {
+    color: rgb(46, 46, 46);
+    text-decoration: none;
+}
+
+/* mouse over link */
+header .menu .nav > li a:hover {
+    color: rgb(183, 0, 20);
+    text-decoration: none;
+}
+
+/* selected link */
+header .menu .nav > li a:active {
+    color: rgb(183, 0, 20);
+    text-decoration: none;
+}
+
+.li_active a:link{
+    color: rgb(183, 0, 20);
+}
+
+.li_active a:visited{
+    color: rgb(183, 0, 20);
+}
+
+.li_active a:hover{
+    color: rgb(183, 0, 20);
+}
+
+.li_active a:active{
+    color: rgb(183, 0, 20);
+}
+
+.li_active {
+    border:1px solid #CCCCCC;
+    color: #FF0000 !important;
+}
+
+header .menu .nav li {
+    margin-left:1%;
+    height: 40px;
+}
+
+header .menu .nav li ul {
+    display:none;
+    position:absolute;
+    min-width:50px;
+    max-width: 150px;
+    margin-top:4px;
+}
+
+header .menu .nav li ul li {
+    padding: 10px 15px 10px 15px;
+    font-size: 10px !important;
+    height:35px !important;
+}
+
+header .menu .nav li ul li a:active {
+    font-family: 'PT Sans Caption',sans-serif;
+    font-size: 11px;
+    font-weight: 50 !important;
+    line-height: 16px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+header .menu .nav li ul li a:link {
+    font-family: 'PT Sans Caption',sans-serif;
+    font-size: 11px;
+    font-weight: 50 !important;
+    line-height: 16px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+header .menu .nav li ul li a:visited {
+    font-family: 'PT Sans Caption',sans-serif;
+    font-size: 11px;
+    font-weight: 50 !important;
+    line-height: 16px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+header .menu .nav li ul li a:hover {
+    font-family: 'PT Sans Caption',sans-serif;
+    font-size: 11px;
+    font-weight: 50  !important;
+    line-height: 16px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+header .menu .nav li ul li:first-child{
+    border-top: 3px solid rgb(183, 0, 20);
+}

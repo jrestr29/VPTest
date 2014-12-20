@@ -153,4 +153,32 @@ class Actor
     {
         return $this->movie;
     }
+    /**
+     * @var \DataBundle\Entity\User
+     */
+    private $actorOwner;
+
+
+    /**
+     * Set actorOwner
+     *
+     * @param \DataBundle\Entity\User $actorOwner
+     * @return Actor
+     */
+    public function setActorOwner(\DataBundle\Entity\User $actorOwner = null)
+    {
+        $this->actorOwner = $actorOwner;
+
+        return $this;
+    }
+
+    /**
+     * Get actorOwner
+     *
+     * @return \DataBundle\Entity\User 
+     */
+    public function getActorOwner()
+    {
+        return $this->actorOwner;
+    }
 }

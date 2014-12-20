@@ -5,6 +5,9 @@ DataBundle\Entity\Actor:
         actor_country_idx:
             columns:
                 - actor_country
+        actor_owner_idx:
+            columns:
+                - actor_owner
     id:
         actorId:
             type: integer
@@ -28,6 +31,15 @@ DataBundle\Entity\Actor:
             fixed: false
             column: actor_last_name
     manyToOne:
+        actorOwner:
+            targetEntity: User
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                actor_owner:
+                    referencedColumnName: user_id
+            orphanRemoval: false
         actorCountry:
             targetEntity: Country
             cascade: {  }

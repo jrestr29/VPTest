@@ -5,6 +5,9 @@ DataBundle\Entity\Movie:
         movie_director_idx:
             columns:
                 - movie_director
+        movie_owner_idx:
+            columns:
+                - movie_owner
     id:
         movieId:
             type: integer
@@ -17,11 +20,38 @@ DataBundle\Entity\Movie:
     fields:
         movieTitle:
             type: string
-            nullable: true
+            nullable: false
             length: 45
             fixed: false
             column: movie_title
+        movieSummary:
+            type: text
+            nullable: false
+            length: null
+            fixed: false
+            column: movie_summary
+        movieImage:
+            type: text
+            nullable: false
+            length: null
+            fixed: false
+            column: movie_image
+        movieTrailerCode:
+            type: text
+            nullable: false
+            length: null
+            fixed: false
+            column: movie_trailer_code
     manyToOne:
+        movieOwner:
+            targetEntity: User
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                movie_owner:
+                    referencedColumnName: user_id
+            orphanRemoval: false
         movieDirector:
             targetEntity: Director
             cascade: {  }

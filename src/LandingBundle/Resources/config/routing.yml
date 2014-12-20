@@ -1,0 +1,3 @@
+landing_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: LandingBundle:Default:index }
